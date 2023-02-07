@@ -1,0 +1,116 @@
+@import url(composants/button.css);
+@import url(composants/container.css);
+@import url(composants/leftPart.css);
+@import url(composants/midpart.css);
+@import url(composants/rightPart.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* permet que les box ne dépassent pas du container */
+}
+
+body {
+    background-image: url('/assets/back_site_minus_opacity.png');
+    background-repeat: no-repeat; /*on veut pas que l'image se répete*/
+    background-position: center;
+    background-size: cover; /* ici le 'cover' permet de prendre toute la h et w */ 
+    background-color: rgb(30, 30, 30);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 160%;
+    padding-left: 10px;
+}
+
+.parties {
+    display: flex;
+    height: 100%;
+}
+
+.left-part {
+    width: 30%;
+    padding-left: 4%;
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: 90px 230px;
+    grid-template-rows: 90px 400px ;
+    grid-gap: 20px;
+}
+
+
+.mid-part {
+    width: 40%;
+    height: auto;  
+    border-left: solid;
+    border-right: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-part {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 35%;
+    height: 30%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 10px;
+    padding: 2%;
+    box-shadow: 8px 10px 50px rgb(231, 231, 231); /* x y  blur couleur */
+}
+
+
+.txt-connexion {
+    color: rgb(243, 243, 243);
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1280px){
+
+    .left-part{grid-template-columns: 80px 230px;}
+    .logo-site{width: 90%;}
+
+    .container-post{height: 230px;}
+
+    .pp-profile {margin-top: 8%;}
+    .profile-nom-user{font-size: 120%;}
+    .identifiant{font-size: 110%;}
+    .suivis{font-size: 110%}
+    .followers{font-size: 110%;}
+
+    .mp-pp{width: 20%;}
+    .mp-nom-user{font-size: 120%;}
+    .mp-identifiant{font-size: 110%;}
+}
+
+@media screen and (max-width:1024px){
+    .left-part{grid-template-columns: 60px;}
+    .logo-site{width: 100%;
+                height: 80%;}
+    
+    .container-post{height: 200px;}            
+    .post-icones{width: 140%;}
+
+    .pp-profile{margin-top: 10%;
+                width: 6%;}
+    .container-profile{grid-template-columns: 1fr 1fr;}
+
+    .mp-pp{width: 20%;}
+}
+

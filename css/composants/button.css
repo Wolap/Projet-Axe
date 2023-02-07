@@ -1,0 +1,15 @@
+
+.btn-edit-profile {
+    width: 105px;
+    border-radius: 15px;
+    border: none;
+    font-size: 80%;
+    background-color: rgb(37, 175, 37);
+    color: white;
+    padding: 5px;
+    grid-column: 4; /* techniquement pas de 4eme colone mais 
+                    ça permet de le coller a droite de la 3eme*/
+}
+
+
+
