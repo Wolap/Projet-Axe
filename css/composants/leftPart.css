@@ -1,0 +1,33 @@
+
+.logo-site {
+    width: 80%;
+    height: 80%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+@keyframes test {
+    from{opacity: 0.25;}
+
+    to{opacity: 1;}
+}
+
+.user-part {
+    padding: 5%;
+    grid-column: 1;
+    grid-row: 2;
+    animation-name: test;
+    animation-duration: 3s;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.user-menu p {
+    padding-left: 10px;
+    color: var(--txt-color);
+    font-size: 25px;
+}

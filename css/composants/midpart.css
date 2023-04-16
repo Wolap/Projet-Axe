@@ -1,0 +1,78 @@
+
+/* Home page */
+
+
+.partage-txt {
+    text-align: center;
+    color: var(--txt-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 110px 30px 30px;   
+    grid-gap: 5%; 
+}
+
+.partage-txt input {
+    border: none;
+    border-radius: 15px;
+}
+
+.partage-txt select {
+    width: 25%;
+    border: none;
+    border-radius: 15px;
+    margin-left: 35%;
+}
+
+.fil{
+    width: 30%;
+}
+
+.sidenav {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    margin-left: 7%;
+    align-items: flex-start;
+}
+
+/* Inscription */
+
+
+
+/* Profile */
+
+.pp-profile {
+    width: 35%;
+    border-radius: 90px;
+    margin: 5%;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.profile-nom-user {
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--txt-color);
+}
+
+.identifiant {
+    color: var(--txt-color);
+}
+
+.suivis {
+    grid-column: 1;
+    grid-row: 4;
+    color: var(--txt-color);
+}
+
+.followers {
+    grid-column: 2;
+    grid-row: 4;
+    color: var(--txt-color);
+}
+
+
+
+
