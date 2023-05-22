@@ -3,14 +3,15 @@
     require "connect.php"; 
 
     $requete = $database->prepare("INSERT INTO tweet 
-    (tweet_contenuTweet, tweet_tag, tweet_file) VALUES 
-    (:formTweet, :formTag, :formFichier) ");
+    (tweet_contenuTweet, tweet_tag, tweet_file, tweet_userid) VALUES 
+    (:formTweet, :formTag, :formFichier, :formUserid) ");
 
     $requete->execute(
         ["formTweet" => $_POST['tweet'],
         "formTag" => $_POST['select'],
         /* le $_FILES ne fonctionne pas, idk why */
-        "formFichier" => $_POST['fichier']
+        "formFichier" => $_POST['fichier'],
+        "formUserid" => 1
         ]
     );
 

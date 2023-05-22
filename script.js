@@ -56,61 +56,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* Trucs qui fonctionnent */
 
-btnPost.addEventListener('click', function() {
-    if (containerPartage.style.display == 'none') {
-        containerPartage.style.display = 'block';
-        leftpart.style.filter = 'blur(2px)';
-        rightpart.style.filter = 'blur(2px)';      
-    }
+btnSideNav.addEventListener('click', function() {
+    console.log('ça click');
+
+    leftpart.style.display = "grid";
+    btnSideNav.style.display = "none";
+    btnCloseNav.style.transform = "translatex(200px)"
+    btnCloseNav.style.display = "block";    
 });
 
-
-
-btnAnnuler.addEventListener('click', function() {
-    containerPartage.style.display = 'none';
-    leftpart.style.filter = 'blur(0px)';
-    rightpart.style.filter = 'blur(0px)';
-});
-
-btnEnvoyer.addEventListener('click', function() {
-    containerPartage.style.display = 'none';
-    leftpart.style.filter = 'blur(0px)';
-    rightpart.style.filter = 'blur(0px)';
-});
-
-
-
-
-/* 
-const lectureIMG = new FileReader();
-*/
-/* On converti l'img en base 64 */
-/*
-lectureIMG.readAsDataURL(fichier);
-console.log(lectureIMG);
-
-lectureIMG.addEventListener("load", function() {
-    console.log('aled img');
-   loadImg = lectureIMG.result;
-});
-*/
-
-btnDelete.addEventListener('click', function(){
-    if (containerSuppr.style.display =='none' ){
-        containerSuppr.style.display = 'block';
-    }
-});
-
-btnNon.addEventListener('click',  function(){
-    containerSuppr.style.display = 'none';
-});
-
-
+btnCloseNav.addEventListener('click', function() {
+    leftpart.style.display = "none";
+    btnSideNav.style.display = "grid";
+    btnCloseNav.style.transform = "translateX(-200px)";
+    btnCloseNav.style.display = "none"; 
+})
 
 btnCode.addEventListener('click', function(){
     console.log('bleu');
+    body.classList.remove('bg-jaune');
+    body.classList.remove('bg-gris');
     body.classList.add('bg-bleu'); 
     containerMid.style.display = 'none';
     containerPostCode.style.display = 'block';
@@ -118,6 +84,8 @@ btnCode.addEventListener('click', function(){
 
 btnMusique.addEventListener('click', function(){
     console.log('jaune');
+    body.classList.remove('bg-gris');
+    body.classList.remove('bg-bleu');    
     body.classList.add('bg-jaune');
     containerMid.style.display = 'none';
     containerPostMusique.style.display = 'block';
@@ -125,6 +93,8 @@ btnMusique.addEventListener('click', function(){
 
 btnPoubelle.addEventListener('click', function(){
     console.log('gris');
+    body.classList.remove('bg-bleu');
+    body.classList.remove('bg-jaune');
     body.classList.add('bg-gris');
     containerMid.style.display = 'none';
     containerPostTrash.style.display = 'block';
@@ -143,23 +113,19 @@ btnReset.addEventListener('click', function(){
     containerMid.style.display = 'block';
 });
 
+/* 
+const lectureIMG = new FileReader();
+*/
+/* On converti l'img en base 64 */
+/*
+lectureIMG.readAsDataURL(fichier);
+console.log(lectureIMG);
 
-
-btnSideNav.addEventListener('click', function() {
-    console.log('ça click');
-
-    leftpart.style.display = "grid";
-    btnSideNav.style.display = "none";
-    btnCloseNav.style.transform = "translatex(200px)"
-    btnCloseNav.style.display = "block";    
+lectureIMG.addEventListener("load", function() {
+    console.log('aled img');
+   loadImg = lectureIMG.result;
 });
-
-btnCloseNav.addEventListener('click', function() {
-    leftpart.style.display = "none";
-    btnSideNav.style.display = "grid";
-    btnCloseNav.style.transform = "translateX(-200px)";
-    btnCloseNav.style.display = "none"; 
-})
+*/
 
 /* test local storage */
 
@@ -172,6 +138,7 @@ function StoreTweetNotSent (event) {
     localStorage.setItem('StockTweet', storagetweet);
     localStorage.setItem('StockTag', storagetag);
     console.log(localStorage.getItem('StockTweet')); /* test */
+    console.log(localStorage.getItem('StockTag')); 
     
 
     btnEnvoyer.addEventListener('click', function() {
@@ -187,6 +154,36 @@ let localTweet = localStorage.getItem('StockTweet');
 let localTag = localStorage.getItem('StockTag');
 tweet.value = localTweet;
 tagSelect.value = localTag;
+
+btnPost.addEventListener('click', function() {
+    if (containerPartage.style.display == 'none') {
+        containerPartage.style.display = 'block';
+        leftpart.style.filter = 'blur(2px)';
+        rightpart.style.filter = 'blur(2px)';      
+    }
+});
+
+btnDelete.addEventListener('click', function(){
+    if (containerSuppr.style.display =='none' ){
+        containerSuppr.style.display = 'block';
+    }
+});
+
+btnNon.addEventListener('click',  function(){
+    containerSuppr.style.display = 'none';
+});
+
+btnAnnuler.addEventListener('click', function() {
+    containerPartage.style.display = 'none';
+    leftpart.style.filter = 'blur(0px)';
+    rightpart.style.filter = 'blur(0px)';
+});
+
+btnEnvoyer.addEventListener('click', function() {
+    containerPartage.style.display = 'none';
+    leftpart.style.filter = 'blur(0px)';
+    rightpart.style.filter = 'blur(0px)';
+});
 
 window.addEventListener("load", (event) => {
     console.log('in the window after load');

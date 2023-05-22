@@ -170,3 +170,12 @@
 .btn-poubelle:hover {
     background-color: rgb(147, 145, 145);
 }
+
+.btn-connecter {
+    background-color: rgb(70, 204, 70);
+    border: none;
+}
+
+.btn-connecter:hover {
+    background-color: rgb(19, 108, 19);
+}

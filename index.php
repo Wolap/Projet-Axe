@@ -4,10 +4,13 @@
     require 'login.php';
 
     /* pour recup les données */
-
-    $requete = $database->prepare("SELECT * FROM tweet ORDER BY tweet_date DESC");
+    
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet_date DESC");
     $requete->execute();
     $tweets = $requete->fetchAll(PDO::FETCH_ASSOC);
+    echo "<pre style='color:white'>";
+    //var_dump($tweets);
+    echo "</pre>";
 
     $requete = $database->prepare("SELECT * FROM tweet WHERE tweet_tag = 'Code' ORDER BY tweet_date DESC ");
     $requete->execute();
@@ -42,6 +45,7 @@
     /* Si l'utilisateur est co */
     if(isset($_SESSION['email'])) {
         echo "tu es co sur ton profile";
+        
     ?>
         <section class="parties"> 
             <section class="left-part" id="left-part">     
@@ -62,12 +66,12 @@
                 </div>
             </section>
 
-            <section class="mid-part" id="mid-part" >
+            <main class="mid-part" id="mid-part" >
 
-                <div class="sidenav">
+                <nav class="sidenav">
                     <button class="btn-sidenav" id="btn-sidenav"> - </button>
                     <button class="btn-closenav" id="btn-closenav"> X </button>
-                </div>
+                </nav>
 
                 <div class="container-partage" id="container-partage" style="display: none;" >
                     <button class="btn-annuler" id="btn-annuler" > X </button>
@@ -75,6 +79,8 @@
                         <label for="tweet"> Votre tweet </label>
                         <input type="text" name="tweet" id="input-tweet" onKeyUp="StoreTweetNotSent()">
                         <input type="file" name="fichier" id="fichier">
+                    
+                        <input type="hidden" name="pseudo-tweet" id="pseudo-tweet">
 
                         <label for="tag-select"> Sélectionnez un tag </label>
                         <select name="select" id="select" onChange="StoreTweetNotSent()"> 
@@ -88,12 +94,16 @@
                                     
                 </div>
 
+
                 <div class="container-mid" id="container-mid">
+                    
                     <?php foreach($tweets as $tweet) { ?>
                         <div class="container-post">
-                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet'];?></p>
-                            <p class="date"> <?php echo $tweet['tweet_date'] ?></p>
-                            <p class="tag"> <?php echo $tweet['tweet_tag'] ?> </p>
+                            
+                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
+                            <p class="date"> <?php echo $tweet['tweet_date']; ?></p>
+                            <p class="tag"> <?php echo $tweet['tweet_tag']; ?> </p>
+                            <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
                             
                             <div class="container-suppr" id="container-suppr" style="display: none;">
                                 <p> Etes vous sure de vouloir supprimez ce tweet ?</p>
@@ -119,6 +129,7 @@
                             <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet'];?></p>
                             <p class="date"> <?php echo $tagCode['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagCode['tweet_tag']; ?> </p>
+                  
                         </div>
 
                     <?php } ?>
@@ -148,7 +159,7 @@
                 <div class="btn-post" id="btn-post">
                     <p> Post </p>
                 </div>    
-            </section>
+            </main>
 
             <section class="right-part" id="right-part"> 
                 <p> Tags </p>
@@ -181,7 +192,7 @@
                 </div>
             </section>
 
-            <section class="mid-part" id="mid-part" >
+            <main class="mid-part" id="mid-part" >
 
                 <div class="container-inscription" id="container-inscription" 
                 style="display: none;">
@@ -190,10 +201,10 @@
                     <a href="index_login.php"> Connexion </a>
                 </div>
 
-                <div class="sidenav">
+                <nav class="sidenav">
                     <button class="btn-sidenav" id="btn-sidenav"> - </button>
                     <button class="btn-closenav" id="btn-closenav"> X </button>
-                </div>
+                </nav>
 
 
                 <div class="container-mid" id="container-mid">
@@ -202,6 +213,7 @@
                             <p class="tweet"> <?php echo $tweet['tweet_contenuTweet'];?></p>
                             <p class="date"> <?php echo $tweet['tweet_date'] ?></p>
                             <p class="tag"> <?php echo $tweet['tweet_tag'] ?> </p>
+                            <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
                         </div>
                     <?php } ?>
                 </div>
@@ -236,7 +248,7 @@
                         </div>
                     <?php } ?>
                 </div>   
-            </section>
+            </main>
 
             <section class="right-part" id="right-part"> 
                 <p> Tags </p>
