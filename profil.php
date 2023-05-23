@@ -1,13 +1,10 @@
 <?php
     require 'connect.php';
-    session_start();
+    require 'login.php';
 
-    $requete = $database->prepare(
-        "SELECT * FROM tweet
-        ORDER BY tweet_date DESC");
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet_date DESC");
     $requete->execute();
     $tweets = $requete->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 
@@ -59,6 +56,9 @@
                     <p class="tweet"> <?php echo $tweet['tweet_contenuTweet'];?></p>
                     <p class="date"> <?php echo $tweet['tweet_date'] ?></p>
                     <p class="tag"> <?php echo $tweet['tweet_tag'] ?> </p>
+                    <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
+
+                    <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                             
                     <div class="container-suppr" id="container-suppr" style="display: none;">
                         <p> Etes vous sure de vouloir supprimez ce tweet ?</p>

@@ -14,19 +14,17 @@
 
 .container-post {
     width: 30rem;
-    height: 250px;
+    height: 300px;
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
     padding: 2%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 7% 7% 20% 40% 19%;
     animation-name: smooth;
     animation-duration: 2s;
 }
 
-.container-post p {
-    padding: 2%;
-}
 
 .container-btn-delete {
     display: flex;
@@ -36,36 +34,39 @@
 
 .container-post-code {
     width: 30rem;
-    height: 250px;
+    height: 300px;
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
     padding: 2%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 7% 7% 20% 40% 19%;
     animation-name: smooth;
     animation-duration: 2s;
 }
 
 .container-post-musique {
     width: 30rem;
-    height: 250px;
+    height: 300px;
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
     padding: 2%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 7% 7% 20% 40% 19%;
     animation-name: smooth;
     animation-duration: 2s;
 }
 
 .container-post-trash {
     width: 30rem;
-    height: 250px;
+    height: 300px;
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
     padding: 2%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 7% 7% 20% 40% 19%;
     animation-name: smooth;
     animation-duration: 2s;
 }

@@ -23,8 +23,9 @@
             if($password == $data[0]["user_password"]) {
                 echo "t'es co";
 
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['id'] = $data[0]["user_id"];
+                $_SESSION['email'] = $data[0]["user_mail"];
+                $_SESSION['pseudo'] = $data[0]["user_pseudo"];
                 header('Location: profil.php?pseudo='.$_SESSION['pseudo']);
             }
         }

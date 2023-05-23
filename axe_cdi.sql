@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 16 avr. 2023 à 12:11
+-- Généré le : mar. 23 mai 2023 à 10:59
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -29,28 +29,31 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tweet` (
   `tweet_id` int NOT NULL,
-  `tweet_pseudo` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
   `tweet_contenuTweet` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tweet_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tweet_tag` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `tweet_file` mediumblob NOT NULL
+  `tweet_file` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `tweet_userid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `tweet`
 --
 
-INSERT INTO `tweet` (`tweet_id`, `tweet_pseudo`, `tweet_contenuTweet`, `tweet_date`, `tweet_tag`, `tweet_file`) VALUES
-(79, '', 'tweet tag code', '2023-04-13 13:57:30', 'Code', ''),
-(80, '', 'encore un tweet avec tag code', '2023-04-13 14:36:55', 'Code', ''),
-(81, '', 'tag musique (eve)', '2023-04-13 14:48:49', 'musique', ''),
-(84, '', 'aled', '2023-04-14 10:08:45', 'musique', ''),
-(86, '', 'test de musique ', '2023-04-14 16:20:24', 'musique', ''),
-(90, '', 'ggg', '2023-04-14 16:29:04', 'musique', ''),
-(91, '', 'jgjhbjubhhh', '2023-04-14 16:35:22', 'Trash', ''),
-(92, '', 'aled', '2023-04-14 17:49:39', 'Code', ''),
-(93, '', 'aled img', '2023-04-14 18:04:43', 'Trash', ''),
-(98, '', 'test du js ', '2023-04-16 11:03:43', 'Code', '');
+INSERT INTO `tweet` (`tweet_id`, `tweet_contenuTweet`, `tweet_date`, `tweet_tag`, `tweet_file`, `tweet_userid`) VALUES
+(107, 'zjzjejzjzjzjzjz', '2023-05-22 11:18:54', 'Code', '', 1),
+(109, 'kklfeeflkvlkef,lkd test 2 eme personne ', '2023-05-22 15:20:40', 'Trash', '', 1),
+(110, 'aled le test de l\'img canard', '2023-05-22 16:53:20', 'Code', '', 1),
+(112, 'le CANARD ! ', '2023-05-22 16:56:27', 'Trash', 'duck_cdi.jpg', 1),
+(113, 'le test ultime du canard', '2023-05-22 17:01:20', 'musique', 'duck_cdi.jpg', 1),
+(124, 'rrterter', '2023-05-23 09:48:21', 'musique', '', 1),
+(125, 'ggjygj', '2023-05-23 10:37:53', 'musique', '', 1),
+(126, 'gggggg', '2023-05-23 10:43:59', 'Code', 'duck_cdi.jpg', 1),
+(127, 'hfhtfh', '2023-05-23 10:44:47', 'musique', 'duck_cdi.jpg', 1),
+(128, 'hfhtfh', '2023-05-23 10:45:57', 'musique', 'duck_cdi.jpg', 1),
+(129, 'hfhtfh', '2023-05-23 10:48:53', 'musique', 'duck_cdi.jpg', 1),
+(130, 'la fameuse pp canard', '2023-05-23 11:20:51', 'Trash', 'tweet_images/pp_canard.png', 1),
+(134, 'quack', '2023-05-23 12:47:04', 'Code', 'tweet_images/duck_cdi.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +73,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_mail`, `user_pseudo`, `user_password`) VALUES
-(1, 'moi@gmail.com', 'wolap', 'moiwolap');
+(1, 'moi@gmail.com', 'wolap', 'moiwolap'),
+(6, 'toi@gmail.com', 'toinobody', 'toinobody');
 
 --
 -- Index pour les tables déchargées
@@ -96,13 +100,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `tweet`
 --
 ALTER TABLE `tweet`
-  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

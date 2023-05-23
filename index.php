@@ -8,19 +8,16 @@
     $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet_date DESC");
     $requete->execute();
     $tweets = $requete->fetchAll(PDO::FETCH_ASSOC);
-    echo "<pre style='color:white'>";
-    //var_dump($tweets);
-    echo "</pre>";
 
-    $requete = $database->prepare("SELECT * FROM tweet WHERE tweet_tag = 'Code' ORDER BY tweet_date DESC ");
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id WHERE tweet_tag = 'Code' ORDER BY tweet_date DESC ");
     $requete->execute();
     $tagsCode = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-    $requete = $database->prepare("SELECT * FROM tweet WHERE tweet_tag = 'Musique' ORDER BY tweet_date DESC ");
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id WHERE tweet_tag = 'Musique' ORDER BY tweet_date DESC ");
     $requete->execute();
     $tagsMusique = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-    $requete = $database->prepare("SELECT * FROM tweet WHERE tweet_tag = 'Trash' ORDER BY tweet_date DESC ");
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id WHERE tweet_tag = 'Trash' ORDER BY tweet_date DESC ");
     $requete->execute();
     $tagsTrash = $requete->fetchAll(PDO::FETCH_ASSOC);
 
@@ -68,17 +65,17 @@
 
             <main class="mid-part" id="mid-part" >
 
-                <nav class="sidenav">
+                <aside class="sidenav">
                     <button class="btn-sidenav" id="btn-sidenav"> - </button>
                     <button class="btn-closenav" id="btn-closenav"> X </button>
-                </nav>
+                </aside>
 
                 <div class="container-partage" id="container-partage" style="display: none;" >
                     <button class="btn-annuler" id="btn-annuler" > X </button>
-                    <form action="insert_tweet.php" method="POST" class="partage-txt">
+                    <form action="insert_tweet.php" method="POST" class="partage-txt" enctype="multipart/form-data">
                         <label for="tweet"> Votre tweet </label>
                         <input type="text" name="tweet" id="input-tweet" onKeyUp="StoreTweetNotSent()">
-                        <input type="file" name="fichier" id="fichier">
+                        <input type="file" name="fichier" id="fichier" accept=".png, .gif, .jpg">
                     
                         <input type="hidden" name="pseudo-tweet" id="pseudo-tweet">
 
@@ -100,10 +97,12 @@
                     <?php foreach($tweets as $tweet) { ?>
                         <div class="container-post">
                             
-                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
+                            <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tweet['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tweet['tweet_tag']; ?> </p>
-                            <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
+                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                             
                             <div class="container-suppr" id="container-suppr" style="display: none;">
                                 <p> Etes vous sure de vouloir supprimez ce tweet ?</p>
@@ -126,9 +125,12 @@
                 <div id="container-post-code" style="display: none;">
                     <?php foreach($tagsCode as $tagCode) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagCode['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagCode['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagCode['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                   
                         </div>
 
@@ -138,9 +140,12 @@
                 <div id="container-post-musique" style="display: none;">
                     <?php foreach($tagsMusique as $tagMusique) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagMusique['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagMusique['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagMusique['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                         </div>
                     <?php } ?>
                 </div>
@@ -148,9 +153,12 @@
                 <div id="container-post-trash" style="display: none;">
                     <?php foreach($tagsTrash as $tagTrash) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagTrash['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagTrash['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagTrash['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                         </div>
                     <?php } ?>
                 </div>
@@ -194,26 +202,27 @@
 
             <main class="mid-part" id="mid-part" >
 
-                <div class="container-inscription" id="container-inscription" 
-                style="display: none;">
+                <div class="container-inscription" id="container-inscription" style="display: none;">
                     <p> Inscrivez vous !</p>
                     <a href="inscription.html"> Inscription </a>
                     <a href="index_login.php"> Connexion </a>
                 </div>
 
-                <nav class="sidenav">
+                <aside class="sidenav">
                     <button class="btn-sidenav" id="btn-sidenav"> - </button>
                     <button class="btn-closenav" id="btn-closenav"> X </button>
-                </nav>
+                </aside>
 
 
                 <div class="container-mid" id="container-mid">
                     <?php foreach($tweets as $tweet) { ?>
                         <div class="container-post">
-                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet'];?></p>
-                            <p class="date"> <?php echo $tweet['tweet_date'] ?></p>
-                            <p class="tag"> <?php echo $tweet['tweet_tag'] ?> </p>
                             <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
+                            <p class="date"> <?php echo $tweet['tweet_date']; ?></p>
+                            <p class="tag"> <?php echo $tweet['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
                         </div>
                     <?php } ?>
                 </div>
@@ -221,9 +230,12 @@
                 <div id="container-post-code" style="display: none;">
                     <?php foreach($tagsCode as $tagCode) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagCode['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagCode['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagCode['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tagCode['tweet_file'] ?>">
                         </div>
 
                     <?php } ?>
@@ -232,9 +244,12 @@
                 <div id="container-post-musique" style="display: none;">
                     <?php foreach($tagsMusique as $tagMusique) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagMusique['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagMusique['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagMusique['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tageMusique['tweet_file'] ?>">
                         </div>
                     <?php } ?>
                 </div>
@@ -242,9 +257,12 @@
                 <div id="container-post-trash" style="display: none;">
                     <?php foreach($tagsTrash as $tagTrash) { ?>
                         <div class="container-post-code">
-                            <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet'];?></p>
+                            <p class="user"> <?php echo $tagTrash['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagTrash['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagTrash['tweet_tag']; ?> </p>
+                            <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet']; ?></p>
+
+                            <img class="img-tweet" src=" <?php echo $tageTrash['tweet_file'] ?>">
                         </div>
                     <?php } ?>
                 </div>   

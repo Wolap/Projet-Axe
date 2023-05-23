@@ -1,7 +1,6 @@
 
 /* Home page */
 
-
 .partage-txt {
     text-align: center;
     color: var(--txt-color);
@@ -35,6 +34,30 @@
     margin-bottom: 10%;
     margin-left: 7%;
     align-items: flex-start;
+}
+
+/* Container partage txt */
+
+.user {
+    grid-row: 1;
+    font-weight: bold;
+}
+
+.date {
+    grid-row: 2;
+}
+
+.tag {
+    grid-row: 3;
+}
+
+.tweet {
+    grid-row: 4;
+}
+
+.img-tweet {
+    width: 25%;
+    
 }
 
 /* Inscription */
