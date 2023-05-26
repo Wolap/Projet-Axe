@@ -3,15 +3,42 @@
 
 
 
-.bg-bleu {
+.bg-code {
     background-color: rgb(113, 113, 227);
 }
 
-.bg-jaune {
+.bg-musique {
     background-color: rgb(225, 192, 103);
 }
 
-.bg-gris {
+.bg-poubelle {
     background-color: rgb(202, 202, 202);
 }
 
+.bg-JV {
+   background-color: rgb(82, 177, 241); 
+}
+
+.bg-art {
+    background-color: rgb(130, 71, 24);
+}
+
+.bg-temps {
+    background-color: rgb(106, 225, 255);
+}
+
+.bg-news {
+    background-color: rgb(252, 67, 67);
+}
+
+.bg-apprendre {
+    background-color: rgb(63, 191, 101);
+}
+
+.bg-mood {
+    background-color: rgb(185, 100, 222);
+}
+
+.bg-guerre {
+    background-color: rgb(70, 68, 67);
+}

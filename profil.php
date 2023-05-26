@@ -2,7 +2,7 @@
     require 'connect.php';
     require 'login.php';
 
-    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet_date DESC");
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet.tweet_date DESC");
     $requete->execute();
     $tweets = $requete->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -19,26 +19,31 @@
 </head>
 <body>
     <section class="parties"> 
-        <section class="left-part"> 
+        <section class="left-part" id="left-part">     
+            <img class="logo-site" id="logo-site" src="assets/images/raison.jpg" alt="logo_site">
 
-            <img class="logo-site" src="assets/images/raison.jpg">
-
-            <div class="user-part"> 
-
-                <div class="user-menu">
-                    <img src="assets/icones/icons8-user-48.png">
-                    <p> Profile</p>
+            <div class="user-part" id="user-part"> 
+                <div class="user-menu" id="user-menu">
+                    <img class="user-img-profile" src="assets/icones/icons8-user-48.png" alt="icone_profil_menu">
+                    <a href="profil.php">Profile</a>
                 </div>
-    
-                <div class="user-menu">
-                    <img src="assets/icones/icons8-home-page-48.png">
+
+                <div class="user-menu" id="user-menu-2">
+                    <img src="assets/icones/icons8-home-page-48.png" alt="icone_home_menu">
                     <a href="index.php">Accueil</a>
                 </div>
-    
+
+                <a href="index_login.php"> Connexion </a>
             </div>
         </section>
     
         <section class="mid-part">
+
+            <aside class="sidenav">
+                <button class="btn-sidenav" id="btn-sidenav"> - </button>
+                <button class="btn-closenav" id="btn-closenav"> X </button>
+            </aside>
+
             <div class="container-banner">
                 <img class="pp-profile" src="assets/images/raison.jpg">
             </div>
@@ -46,9 +51,7 @@
             <div class="container-profile">
                 <p class="profile-nom-user"> Nom utilisateur </p>
                 <button class="btn-edit-profile"> Edit Profile</button>
-                <p class="identifiant"> identifiant</p>
-                <p class="suivis"> nb suivi</p>
-                <p class="followers"> nb followers</p>  
+                <p class="identifiant"> identifiant</p> 
             </div>
 
             <?php foreach($tweets as $tweet) { ?>
@@ -86,10 +89,17 @@
                 <button class="btn-code" id="btn-code"> Code </button>
                 <button class="btn-musique" id="btn-musique"> Musique </button>
                 <button class="btn-poubelle" id="btn-poubelle"> Poubelle </button>
+                <button class="btn-JV" id="btn-JV"> Jeux Vidéos </button>
+                <button class="btn-art" id="btn-art"> Art </button>
+                <button class="btn-temps" id="btn-temps"> Temps </button>
+                <button class="btn-news" id="btn-news"> News </button>
+                <button class="btn-apprendre" id="btn-apprendre"> Apprentissage </button>
+                <button class="btn-mood" id="btn-mood"> Mood </button>
+                <button class="btn-guerre" id="btn-guerre"> Guerre </button>
             </div>
         </section>
         
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>

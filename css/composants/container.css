@@ -17,6 +17,7 @@
     height: 300px;
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
+    border-radius: 15px;
     padding: 2%;
     display: grid;
     grid-template-columns: 1fr;
@@ -32,48 +33,11 @@
     margin-top: 2%;
 }
 
-.container-post-code {
-    width: 30rem;
-    height: 300px;
-    background-color: rgb(218, 218, 218);
-    margin-bottom: 10%;
-    padding: 2%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 7% 7% 7% 20% 40% 19%;
-    animation-name: smooth;
-    animation-duration: 2s;
-}
 
-.container-post-musique {
-    width: 30rem;
-    height: 300px;
-    background-color: rgb(218, 218, 218);
-    margin-bottom: 10%;
-    padding: 2%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 7% 7% 7% 20% 40% 19%;
-    animation-name: smooth;
-    animation-duration: 2s;
-}
-
-.container-post-trash {
-    width: 30rem;
-    height: 300px;
-    background-color: rgb(218, 218, 218);
-    margin-bottom: 10%;
-    padding: 2%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 7% 7% 7% 20% 40% 19%;
-    animation-name: smooth;
-    animation-duration: 2s;
-}
 
 .container-tags {
     width: 80%;
-    height: 100%;
+    height: 10%;
     border: solid;
     border-radius: 15px;
     border-color: white;
@@ -88,10 +52,11 @@
     position: absolute;
     width: 25%;
     height: 40%;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(37, 175, 37);
     border-radius: 15px;
     padding: 1%;
     margin-top: 15%;
+    color: var(--txt-color);
 }
 
 .container-suppr {

@@ -9,7 +9,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box; /* permet que les box ne dépassent pas du container */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
 
 :root {
     --bg-color-transparent: rgba(0, 0, 0, 0.582);
@@ -41,7 +44,7 @@ a:hover {
 
 
 .left-part {
-    width: 30%;
+    width: 25%;
     padding-left: 3%;
     padding-top: 2%;
     display: grid;
@@ -52,7 +55,7 @@ a:hover {
 
 
 .mid-part {
-    width: 40%;
+    width: 50%;
     height: auto;  
     border-left: solid;
     border-right: solid;
@@ -64,7 +67,7 @@ a:hover {
 }
 
 .right-part {
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,6 +135,8 @@ a:hover {
 
 @media screen and (max-width: 1240px ) {
     .container-post{width: 22rem;}
+
+    .container-tags {height: 12%;}
 }
 
 @media screen and (max-width:1025px){
@@ -180,13 +185,12 @@ a:hover {
 
     .left-part{position: absolute;
         display: none;
-        height: 100vh;
         width: 50%;
         background-color: rgb(199, 199, 199);
         grid-template-columns: 95%;
         grid-template-rows: 50px 500px;
         grid-gap: 3%;
-        height: 100%;
+        height: 110%;
         padding-left: 1%;
         padding-top: 3%;}
 
@@ -211,6 +215,20 @@ a:hover {
         
     .user-menu img{
         width: 30%;}
+
+    .container-inscription{
+        width: 70%;
+        padding: 5%;
+        font-size: 110%;
+        height: 25%;}
+
+    .container-inscription a {
+        padding: 0%;
+        font-size: 120%;}
+
+    .container-post {
+        padding: 5%;
+        height: 300px;}
 
     .right-part {display: none;
                 width: 0%;}
@@ -278,7 +296,27 @@ a:hover {
     .form{width: 90%;
         font-size: 120%;}
 
+    .container-post {
+        font-size: 120%;
+        height: 400px;
+        padding: 5%;}
+
+    .img-tweet{width: 60%;}
+
+    .container-inscription{
+        width: 70%;
+        padding: 5%;
+        font-size: 140%;}
+
+    .container-inscription a {
+        padding: 0%;
+        font-size: 120%;}
+
     .btn.btn-secondary{font-size: 120%;}
+
+    .btn-delete {width: 20%;}
+
+    .btn-delete img {width: 80%;}
 
     .pp-profile{width: 60%;}
     .container-profile p {font-size: 140%;}
@@ -328,6 +366,15 @@ a:hover {
     .mid-part{width: 70%;}
     .container-profile{font-size: 100%;}
 
+    .container-inscription{
+        width: 60%;
+        font-size: 120%;
+        padding: 5%;
+        height: 20%;}
+        
+    .container-inscription a {
+        padding: 0%;
+        font-size: 110%;}
     
     .right-part {display: none;
         width: 0%;}

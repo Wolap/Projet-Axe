@@ -10,6 +10,13 @@ const btnCloseNav = document.querySelector('#btn-closenav');
 const btnCode = document.querySelector('#btn-code');
 const btnMusique = document.querySelector('#btn-musique');
 const btnPoubelle = document.querySelector('#btn-poubelle');
+const btnJV = document.querySelector('#btn-JV');
+const btnArt = document.querySelector('#btn-art');
+const btnTemps = document.querySelector('#btn-temps');
+const btnNews = document.querySelector('#btn-news');
+const btnApprendre = document.querySelector('#btn-apprendre');
+const btnMood = document.querySelector('#btn-mood');
+const btnGuerre = document.querySelector('#btn-guerre');
 const btnReset = document.querySelector('#btn-reset');
 
 const containerMid = document.querySelector('#container-mid');
@@ -19,7 +26,13 @@ const containerSuppr = document.querySelector('#container-suppr');
 const containerPostCode = document.querySelector('#container-post-code');
 const containerPostMusique = document.querySelector('#container-post-musique');
 const containerPostTrash = document.querySelector('#container-post-trash');
-
+const containerPostJv = document.querySelector('#container-post-jv');
+const containerPostArt = document.querySelector('#container-post-art');
+const containerPostTemps = document.querySelector('#container-post-temps');
+const containerPostNews = document.querySelector('#container-post-news');
+const containerPostApprendre = document.querySelector('#container-post-apprendre');
+const containerPostMood = document.querySelector('#container-post-mood');
+const containerPostGuerre = document.querySelector('#container-post-guerre');
 
 const LogoSite = document.querySelector('#logo-site');
 const UserPart = document.querySelector('#user-part');
@@ -73,39 +86,191 @@ btnCloseNav.addEventListener('click', function() {
     btnCloseNav.style.display = "none"; 
 })
 
+/* btn tags */
+
 btnCode.addEventListener('click', function(){
-    console.log('bleu');
-    body.classList.remove('bg-jaune');
-    body.classList.remove('bg-gris');
-    body.classList.add('bg-bleu'); 
+    console.log('code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-code'); 
     containerMid.style.display = 'none';
     containerPostCode.style.display = 'block';
 });
 
 btnMusique.addEventListener('click', function(){
-    console.log('jaune');
-    body.classList.remove('bg-gris');
-    body.classList.remove('bg-bleu');    
-    body.classList.add('bg-jaune');
+    console.log('musique');  
+    body.classList.remove('bg-code'); 
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-musique');
     containerMid.style.display = 'none';
     containerPostMusique.style.display = 'block';
 });
 
 btnPoubelle.addEventListener('click', function(){
-    console.log('gris');
-    body.classList.remove('bg-bleu');
-    body.classList.remove('bg-jaune');
-    body.classList.add('bg-gris');
+    console.log('poubelle');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-poubelle');
     containerMid.style.display = 'none';
     containerPostTrash.style.display = 'block';
+});
+
+btnJV.addEventListener('click', function(){
+    console.log('jv');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-JV');
+    containerMid.style.display = 'none';
+    containerPostJv.style.display = 'block';
+});
+
+btnArt.addEventListener('click', function(){
+    console.log('art');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-art');
+    containerMid.style.display = 'none';
+    containerPostArt.style.display = 'block';
+});
+
+btnTemps.addEventListener('click', function(){
+    console.log('temps');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-temps');
+    containerMid.style.display = 'none';
+    containerPostTemps.style.display = 'block';
+});
+
+btnNews.addEventListener('click', function(){
+    console.log('news');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-news');
+    containerMid.style.display = 'none';
+    containerPostNews.style.display = 'block';
+});
+
+btnApprendre.addEventListener('click', function(){
+    console.log('apprendre');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-apprendre');
+    containerMid.style.display = 'none';
+    containerPostApprendre.style.display = 'block';
+});
+
+btnMood.addEventListener('click', function(){
+    console.log('mood');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-guerre');
+
+    body.classList.add('bg-mood');
+    containerMid.style.display = 'none';
+    containerPostMood.style.display = 'block';
+});
+
+btnGuerre.addEventListener('click', function(){
+    console.log('guerre');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-poubelle');
+
+    body.classList.add('bg-guerre');
+    containerMid.style.display = 'none';
+    containerPostGuerre.style.display = 'block';
 });
 
 btnReset.addEventListener('click', function(){
     console.log('remove');
 
-    body.classList.remove('bg-bleu');
-    body.classList.remove('bg-jaune');
-    body.classList.remove('bg-gris');
+    body.classList.remove('bg-code');
+    body.classList.remove('bg-musique');
+    body.classList.remove('bg-poubelle');
+    body.classList.remove('bg-JV');
+    body.classList.remove('bg-art');
+    body.classList.remove('bg-temps');
+    body.classList.remove('bg-news');
+    body.classList.remove('bg-apprendre');
+    body.classList.remove('bg-mood');
+    body.classList.remove('bg-guerre');
 
     containerPostCode.style.display = 'none';
     containerPostMusique.style.display = 'none';
