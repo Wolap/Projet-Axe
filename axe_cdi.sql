@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 mai 2023 à 08:54
+-- Généré le : ven. 26 mai 2023 à 10:19
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -59,7 +59,10 @@ INSERT INTO `tweet` (`tweet_id`, `tweet_contenuTweet`, `tweet_date`, `tweet_tag`
 (140, 'qkjcziuhfoez temps', '2023-05-26 10:29:45', 'Temps', 'tweet_images/', 6),
 (141, 'c\'est beau', '2023-05-26 10:29:53', 'Art', 'tweet_images/', 6),
 (142, 'la nouveauté de ce site', '2023-05-26 10:30:16', 'News', 'tweet_images/', 6),
-(143, 'dernier jour', '2023-05-26 10:30:33', 'Mood', 'tweet_images/', 6);
+(143, 'dernier jour', '2023-05-26 10:30:33', 'Mood', 'tweet_images/', 6),
+(144, 'test', '2023-05-26 11:35:00', 'JeuxVideos', 'tweet_images/', 1),
+(146, 'Hola', '2023-05-26 11:48:53', 'Code', 'tweet_images/our_code.png', 1),
+(147, 'Re', '2023-05-26 11:49:03', 'Code', 'tweet_images/', 1);
 
 -- --------------------------------------------------------
 
@@ -107,7 +110,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `tweet`
 --
 ALTER TABLE `tweet`
-  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT pour la table `user`

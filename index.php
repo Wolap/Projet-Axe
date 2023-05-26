@@ -135,7 +135,9 @@
                             <p class="tag"> <?php echo $tweet['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php  if(!is_null($tweet['tweet_file']) && $tweet['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php } ?>
                             
                             <div class="container-suppr" id="container-suppr" style="display: none;">
                                 <p> Etes vous sure de vouloir supprimez ce tweet ?</p>
@@ -156,14 +158,18 @@
                 </div>
                 
                 <div id="container-post-code" style="display: none;">
-                    <?php foreach($tagsCode as $tagCode) { ?>
+                    <?php foreach($tagsCode as $tagCode) { 
+                       
+                        ?>
                         <div class="container-post">
                             <p class="user"> <?php echo $tagCode['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagCode['tweet_date']; ?></p>
                             <p class="tag"> <?php echo $tagCode['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php  if(!is_null($tagCode['tweet_file']) && $tagCode['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagCode['tweet_file'] ?>">
+                            <?php } ?>
                   
                         </div>
 
@@ -178,7 +184,9 @@
                             <p class="tag"> <?php echo $tagMusique['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php  if(!is_null($tagMusique['tweet_file']) && $tagMusique['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagMusique['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -191,7 +199,9 @@
                             <p class="tag"> <?php echo $tagTrash['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php  if(!is_null($tagTrash['tweet_file']) && $tagTrash['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagTrash['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -204,7 +214,9 @@
                             <p class="tag"> <?php echo $tagJV['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagJV['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagJV['tweet_file'] ?>">
+                            <?php  if(!is_null($tagJV['tweet_file']) && $tagJV['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagJV['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -217,7 +229,9 @@
                             <p class="tag"> <?php echo $tagArt['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagArt['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagArt['tweet_file'] ?>">
+                            <?php  if(!is_null($tagArt['tweet_file']) && $tagArt['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagArt['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -230,7 +244,9 @@
                             <p class="tag"> <?php echo $tagTemps['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagTemps['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagTemps['tweet_file'] ?>">
+                            <?php  if(!is_null($tagTemps['tweet_file']) && $tagTemps['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagTemps['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -243,7 +259,9 @@
                             <p class="tag"> <?php echo $tagNews['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagNews['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagNews['tweet_file'] ?>">
+                            <?php  if(!is_null($tagNews['tweet_file']) && $tagNews['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagNews['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -256,7 +274,9 @@
                             <p class="tag"> <?php echo $tagApprendre['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagApprendre['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagApprendre['tweet_file'] ?>">
+                            <?php  if(!is_null($tagApprendre['tweet_file']) && $tagApprendre['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagApprendre['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -269,7 +289,9 @@
                             <p class="tag"> <?php echo $tagMood['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagMood['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagMood['tweet_file'] ?>">
+                            <?php  if(!is_null($tagMood['tweet_file']) && $tagMood['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagMood['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -282,7 +304,9 @@
                             <p class="tag"> <?php echo $tagGuerre['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagGuerre['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagGuerre['tweet_file'] ?>">
+                            <?php  if(!is_null($tagGuerre['tweet_file']) && $tagGuerre['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagGuerre['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -353,7 +377,9 @@
                             <p class="tag"> <?php echo $tweet['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tweet['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php  if(!is_null($tweet['tweet_file']) && $tweet['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -366,7 +392,9 @@
                             <p class="tag"> <?php echo $tagCode['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagCode['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagCode['tweet_file'] ?>">
+                            <?php  if(!is_null($tagCode['tweet_file']) && $tagCode['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagCode['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
 
                     <?php } ?>
@@ -380,7 +408,9 @@
                             <p class="tag"> <?php echo $tagMusique['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagMusique['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tageMusique['tweet_file'] ?>">
+                            <?php  if(!is_null($tagMusique['tweet_file']) && $tagMusique['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagMusique['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -393,7 +423,9 @@
                             <p class="tag"> <?php echo $tagTrash['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagTrash['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tageTrash['tweet_file'] ?>">
+                            <?php  if(!is_null($tagTrash['tweet_file']) && $tagTrash['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagTrash['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>   
@@ -405,7 +437,9 @@
                             <p class="tag"> <?php echo $tagJV['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagJV['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagJV['tweet_file'] ?>">
+                            <?php  if(!is_null($tagJV['tweet_file']) && $tagJV['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagJV['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -418,7 +452,9 @@
                             <p class="tag"> <?php echo $tagArt['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagArt['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagArt['tweet_file'] ?>">
+                            <?php  if(!is_null($tagArt['tweet_file']) && $tagArt['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagArt['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -431,7 +467,9 @@
                             <p class="tag"> <?php echo $tagTemps['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagTemps['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagTemps['tweet_file'] ?>">
+                            <?php  if(!is_null($tagTemps['tweet_file']) && $tagTemps['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagTemps['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -444,7 +482,9 @@
                             <p class="tag"> <?php echo $tagNews['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagNews['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagNews['tweet_file'] ?>">
+                            <?php  if(!is_null($tagNews['tweet_file']) && $tagNews['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagNews['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -457,7 +497,9 @@
                             <p class="tag"> <?php echo $tagApprendre['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagApprendre['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagApprendre['tweet_file'] ?>">
+                            <?php  if(!is_null($tagApprendre['tweet_file']) && $tagApprendre['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagApprendre['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -470,7 +512,9 @@
                             <p class="tag"> <?php echo $tagMood['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagMood['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagMood['tweet_file'] ?>">
+                            <?php  if(!is_null($tagMood['tweet_file']) && $tagMood['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagMood['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -483,7 +527,9 @@
                             <p class="tag"> <?php echo $tagGuerre['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagGuerre['tweet_contenuTweet']; ?></p>
 
-                            <img class="img-tweet" src=" <?php echo $tagGuerre['tweet_file'] ?>">
+                            <?php  if(!is_null($tagGuerre['tweet_file']) && $tagGuerre['tweet_file'] != "tweet_images/") { ?>
+                                <img class="img-tweet" src=" <?php echo $tagGuerre['tweet_file'] ?>">
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>

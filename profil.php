@@ -51,9 +51,9 @@
             </div>
 
             <div class="container-profile">
-                <p class="profile-nom-user"> Nom utilisateur </p>
+                <p class="profile-nom-user"> <?php echo $_SESSION['pseudo'] ?> </p>
                 <button class="btn-edit-profile"> Edit Profile</button>
-                <p class="identifiant"> identifiant</p> 
+                <p class="identifiant"> Identifiant : <?php echo $userId ?></p> 
             </div>
 
             <?php foreach($tweets as $tweet) { ?>
@@ -63,7 +63,9 @@
                     <p class="tag"> <?php echo $tweet['tweet_tag'] ?> </p>
                     <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
 
-                    <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                    <?php  if(!is_null($tweet['tweet_file']) && $tweet['tweet_file'] != "tweet_images/") { ?>
+                        <img class="img-tweet" src=" <?php echo $tweet['tweet_file'] ?>">
+                    <?php } ?>
                             
                     <div class="container-suppr" id="container-suppr" style="display: none;">
                         <p> Etes vous sure de vouloir supprimez ce tweet ?</p>
