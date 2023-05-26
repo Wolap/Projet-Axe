@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 mai 2023 à 06:32
+-- Généré le : ven. 26 mai 2023 à 08:36
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -53,7 +53,13 @@ INSERT INTO `tweet` (`tweet_id`, `tweet_contenuTweet`, `tweet_date`, `tweet_tag`
 (130, 'la fameuse pp canard', '2023-05-23 11:20:51', 'Trash', 'tweet_images/pp_canard.png', 1),
 (134, 'quack', '2023-05-23 12:47:04', 'Code', 'tweet_images/duck_cdi.jpg', 1),
 (136, 'aleeedd', '2023-05-23 13:08:54', 'musique', 'tweet_images/', 6),
-(137, 'kjfhejfdskfkdsjkfds', '2023-05-24 12:05:01', 'JeuxVideos', 'tweet_images/', 1);
+(137, 'kjfhejfdskfkdsjkfds', '2023-05-24 12:05:01', 'JeuxVideos', 'tweet_images/', 1),
+(138, 'pas cool ce qui se passe en ce moment ', '2023-05-26 09:59:21', 'Guerre', 'tweet_images/our_code.png', 1),
+(139, 'apprendre c\'est nécessaire', '2023-05-26 10:29:33', 'Apprentissage', 'tweet_images/', 6),
+(140, 'qkjcziuhfoez temps', '2023-05-26 10:29:45', 'Temps', 'tweet_images/', 6),
+(141, 'c\'est beau', '2023-05-26 10:29:53', 'Art', 'tweet_images/', 6),
+(142, 'la nouveauté de ce site', '2023-05-26 10:30:16', 'News', 'tweet_images/', 6),
+(143, 'dernier jour', '2023-05-26 10:30:33', 'Mood', 'tweet_images/', 6);
 
 -- --------------------------------------------------------
 
@@ -100,7 +106,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `tweet`
 --
 ALTER TABLE `tweet`
-  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `tweet_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT pour la table `user`

@@ -23,6 +23,7 @@ const containerMid = document.querySelector('#container-mid');
 const containerInscription = document.querySelector('#container-inscription');
 const containerPartage = document.querySelector('#container-partage');
 const containerSuppr = document.querySelector('#container-suppr');
+const containerPost = document.querySelector('#container-post');
 const containerPostCode = document.querySelector('#container-post-code');
 const containerPostMusique = document.querySelector('#container-post-musique');
 const containerPostTrash = document.querySelector('#container-post-trash');
@@ -59,13 +60,11 @@ window.addEventListener('scroll', () => {
     /* if : math.ceil = arrondir au sup */
     if (Math.ceil(ScrollPosition) > 100) {
         containerInscription.style.display = 'block';
-        body.style.opacity = 0.75;
+        /*body.style.opacity = 0.75;*/
         containerInscription.style.opacity = 1;
-        /*
+        
         leftpart.style.filter = 'blur(3px)';
-        rightpart.style.filter = 'blur(3px)';
-        containerPost.style.filter = 'blur(3px)';
-        */
+        rightpart.style.filter = 'blur(3px)';        
     }
 });
 
@@ -102,6 +101,16 @@ btnCode.addEventListener('click', function(){
 
     body.classList.add('bg-code'); 
     containerMid.style.display = 'none';
+    
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostCode.style.display = 'block';
 });
 
@@ -119,6 +128,16 @@ btnMusique.addEventListener('click', function(){
 
     body.classList.add('bg-musique');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostMusique.style.display = 'block';
 });
 
@@ -136,6 +155,16 @@ btnPoubelle.addEventListener('click', function(){
 
     body.classList.add('bg-poubelle');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostTrash.style.display = 'block';
 });
 
@@ -153,6 +182,16 @@ btnJV.addEventListener('click', function(){
 
     body.classList.add('bg-JV');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostJv.style.display = 'block';
 });
 
@@ -170,6 +209,16 @@ btnArt.addEventListener('click', function(){
 
     body.classList.add('bg-art');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostArt.style.display = 'block';
 });
 
@@ -187,6 +236,16 @@ btnTemps.addEventListener('click', function(){
 
     body.classList.add('bg-temps');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostTemps.style.display = 'block';
 });
 
@@ -204,6 +263,16 @@ btnNews.addEventListener('click', function(){
 
     body.classList.add('bg-news');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostNews.style.display = 'block';
 });
 
@@ -221,6 +290,16 @@ btnApprendre.addEventListener('click', function(){
 
     body.classList.add('bg-apprendre');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostApprendre.style.display = 'block';
 });
 
@@ -238,6 +317,16 @@ btnMood.addEventListener('click', function(){
 
     body.classList.add('bg-mood');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerPostMood.style.display = 'block';
 });
 
@@ -255,6 +344,16 @@ btnGuerre.addEventListener('click', function(){
 
     body.classList.add('bg-guerre');
     containerMid.style.display = 'none';
+    
+    containerPostCode.style.display = 'none';
+    containerPostMusique.style.display = 'none';
+    containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
     containerPostGuerre.style.display = 'block';
 });
 
@@ -275,6 +374,13 @@ btnReset.addEventListener('click', function(){
     containerPostCode.style.display = 'none';
     containerPostMusique.style.display = 'none';
     containerPostTrash.style.display = 'none';
+    containerPostJv.style.display = 'none';
+    containerPostArt.style.display = 'none';
+    containerPostTemps.style.display = 'none';
+    containerPostNews.style.display = 'none';
+    containerPostApprendre.style.display = 'none';
+    containerPostMood.style.display = 'none';
+    containerPostGuerre.style.display = 'none';
     containerMid.style.display = 'block';
 });
 
@@ -292,7 +398,7 @@ lectureIMG.addEventListener("load", function() {
 });
 */
 
-/* test local storage */
+/* local storage */
 
 function StoreTweetNotSent (event) {
 

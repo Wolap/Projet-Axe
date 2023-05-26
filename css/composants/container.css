@@ -18,7 +18,7 @@
     background-color: rgb(218, 218, 218);
     margin-bottom: 10%;
     border-radius: 15px;
-    padding: 2%;
+    padding: 3%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 7% 7% 7% 20% 40% 19%;
@@ -34,10 +34,8 @@
 }
 
 
-
 .container-tags {
     width: 80%;
-    height: 10%;
     border: solid;
     border-radius: 15px;
     border-color: white;
@@ -46,13 +44,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 4px;
 }
 
 .container-inscription {
     position: absolute;
     width: 25%;
-    height: 40%;
+    height: 20%;
     background-color: rgb(37, 175, 37);
+    border: 3px solid rgb(44, 44, 45);
     border-radius: 15px;
     padding: 1%;
     margin-top: 15%;
@@ -62,10 +62,11 @@
 .container-suppr {
     position: absolute;
     width: 25%;
-    height: 40%;
+    height: 30%;
     background-color: rgb(80, 79, 79);
+    border: 3px solid rgb(44, 44, 45);
     border-radius: 15px;
-    padding: 1%;
+    padding: 2%;
     margin-top: 20%;
     color: var(--txt-color);
 }

@@ -135,8 +135,6 @@ a:hover {
 
 @media screen and (max-width: 1240px ) {
     .container-post{width: 22rem;}
-
-    .container-tags {height: 12%;}
 }
 
 @media screen and (max-width:1025px){

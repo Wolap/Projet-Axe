@@ -5,7 +5,7 @@
     border: none;
     border-radius: 15px;
     padding: 5%;
-
+    cursor: pointer;
 }  
 
 .btn-post {
@@ -23,6 +23,7 @@
     bottom: 3%;
     left: 63%;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-post:hover {
@@ -50,6 +51,7 @@
     border: none;
     font-size: 90%;
     color: rgba(0, 0, 0, 0.89);
+    cursor: pointer;
 }
 
 .btn-envoyer {
@@ -61,6 +63,7 @@
     color: rgba(255, 255, 255, 0.89);
     padding: 1%;
     margin-left: 40%;
+    cursor: pointer;
 }
 
 .btn-delete {
@@ -72,11 +75,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .btn-delete img {
     width: 50%;
-
 }
 
 .btn-oui {
@@ -86,7 +89,7 @@
     font-size: 120%;
     color: black;
     padding: 5%;
-
+    cursor: pointer;
 }
 
 .btn-non {
@@ -98,6 +101,7 @@
     padding: 1%;
     margin-top: 5%;
     margin-right: 5%;
+    cursor: pointer;
 }
 
 .btn-sidenav {
@@ -105,6 +109,7 @@
     width: 5%;
     font-size: 120%;
     border: none;
+    cursor: pointer;
 }
 
 .btn-closenav {
@@ -112,6 +117,7 @@
     width: 5%;
     font-size: 120%;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -126,6 +132,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-reset:hover {
@@ -141,6 +148,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-code:hover {
@@ -155,6 +163,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-musique:hover {
@@ -169,6 +178,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-poubelle:hover {
@@ -183,6 +193,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-JV:hover {
@@ -197,6 +208,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-art:hover {
@@ -211,6 +223,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-temps:hover {
@@ -225,6 +238,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-news:hover {
@@ -239,6 +253,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-apprendre:hover {
@@ -253,6 +268,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-mood:hover {
@@ -267,6 +283,7 @@
     padding: 2%;
     border-radius: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-guerre:hover {

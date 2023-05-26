@@ -26,6 +26,7 @@
         }
         else {
             echo "fichier trop volumineux";
+            header('Location: index.php');
         }
 
         //$link = 'tweet_images/' . $_FILES['fichier']['name'];

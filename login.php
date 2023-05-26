@@ -26,6 +26,7 @@
                 $_SESSION['id'] = $data[0]["user_id"];
                 $_SESSION['email'] = $data[0]["user_mail"];
                 $_SESSION['pseudo'] = $data[0]["user_pseudo"];
+                //var_dump($data);
                 header('Location: profil.php?pseudo='.$_SESSION['pseudo']);
             }
         }

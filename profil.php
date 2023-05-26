@@ -2,20 +2,22 @@
     require 'connect.php';
     require 'login.php';
 
-    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id ORDER BY tweet.tweet_date DESC");
+    $userId = $_SESSION['id'];
+
+    $requete = $database->prepare("SELECT * FROM tweet INNER JOIN user ON tweet.tweet_userid = user.user_id WHERE tweet.tweet_userid = $userId ORDER BY tweet.tweet_date DESC");
     $requete->execute();
     $tweets = $requete->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Axe project</title>
 </head>
 <body>
     <section class="parties"> 
@@ -25,7 +27,7 @@
             <div class="user-part" id="user-part"> 
                 <div class="user-menu" id="user-menu">
                     <img class="user-img-profile" src="assets/icones/icons8-user-48.png" alt="icone_profil_menu">
-                    <a href="profil.php">Profile</a>
+                    <a href="profil.php?pseudo=<?php echo $_SESSION['pseudo']; ?>">Profile</a>
                 </div>
 
                 <div class="user-menu" id="user-menu-2">

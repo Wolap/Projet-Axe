@@ -56,7 +56,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,7 +77,7 @@
                 <div class="user-part" id="user-part"> 
                     <div class="user-menu" id="user-menu">
                         <img class="user-img-profile" src="assets/icones/icons8-user-48.png" alt="icone_profil_menu">
-                        <a href="profil.php">Profile</a>
+                        <a href="profil.php?pseudo=<?php echo $_SESSION['pseudo']; ?>">Profile</a>
                     </div>
 
                     <div class="user-menu" id="user-menu-2">
@@ -128,7 +128,7 @@
                 <div class="container-mid" id="container-mid">
                     
                     <?php foreach($tweets as $tweet) { ?>
-                        <div class="container-post">
+                        <div class="container-post" id="container-post">
                             
                             <p class="user"> <?php echo $tweet['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tweet['tweet_date']; ?></p>
@@ -201,7 +201,7 @@
                         <div class="container-post">
                             <p class="user"> <?php echo $tagJV['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagJV['tweet_date']; ?></p>
-                            <p class="tag"> <?php echo $tagsJV['tweet_tag']; ?> </p>
+                            <p class="tag"> <?php echo $tagJV['tweet_tag']; ?> </p>
                             <p class="tweet"> <?php echo $tagJV['tweet_contenuTweet']; ?></p>
 
                             <img class="img-tweet" src=" <?php echo $tagJV['tweet_file'] ?>">
@@ -275,7 +275,7 @@
                 </div>
 
                 <div id="container-post-guerre" style="display: none;">
-                    <?php foreach($taggGuerre as $tagGuerre) { ?>
+                    <?php foreach($tagsGuerre as $tagGuerre) { ?>
                         <div class="container-post">
                             <p class="user"> <?php echo $tagGuerre['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagGuerre['tweet_date']; ?></p>
@@ -476,7 +476,7 @@
                 </div>
 
                 <div id="container-post-guerre" style="display: none;">
-                    <?php foreach($taggGuerre as $tagGuerre) { ?>
+                    <?php foreach($tagsGuerre as $tagGuerre) { ?>
                         <div class="container-post">
                             <p class="user"> <?php echo $tagGuerre['user_pseudo']; ?> </p>
                             <p class="date"> <?php echo $tagGuerre['tweet_date']; ?></p>
