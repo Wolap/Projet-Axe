@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 mai 2023 à 08:36
+-- Généré le : ven. 26 mai 2023 à 08:54
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -71,7 +71,7 @@ CREATE TABLE `user` (
   `user_id` int NOT NULL,
   `user_mail` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `user_pseudo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `user_password` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `user_password` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -80,7 +80,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_mail`, `user_pseudo`, `user_password`) VALUES
 (1, 'moi@gmail.com', 'wolap', 'moiwolap'),
-(6, 'toi@gmail.com', 'toinobody', 'toinobody');
+(6, 'toi@gmail.com', 'toinobody', 'toinobody'),
+(7, 'il@gmail.com', 'ilEstToi', '$2y$10$ErFg5rruK3OHpu19hZKc2e1w8YTHkR46VmZcIKUIAgb06fbukJ8pa');
 
 --
 -- Index pour les tables déchargées
@@ -112,7 +113,7 @@ ALTER TABLE `tweet`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

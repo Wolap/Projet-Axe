@@ -25,7 +25,7 @@ session_start()
                 <input type="text" name="pseudo" class="form-control" id="formGroupExampleInput2">
                 
                 <label for="formGroupInput3" class="form-label">Mot de passe</label>
-                <input type="text" name="password" class="form-control" id="formGroupExampleInput3">
+                <input type="password" name="password" class="form-control" id="formGroupExampleInput3">
                 
                 <div class="container-btn-inscription">
                     <button name="connexion" type="submit" class="btn btn-secondary btn-connecter">Se connecter</button>

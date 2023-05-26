@@ -8,7 +8,7 @@
     $requete->execute(
         ["formEmail" => $_POST['email'],
         "formPseudo" => $_POST['pseudo'],
-        "formPassword" => $_POST['password'] ]
+        "formPassword" => password_hash($_POST['password'], PASSWORD_DEFAULT) ]
     );
 
     header('Location: index.php'); 
